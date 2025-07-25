@@ -7,12 +7,12 @@ class Solution {
             if(target==nums[mid]){
                 return true;
             }
-
+      //if there are duplicates...[1,1,1,0,1,1,1]
             if(nums[low]==nums[mid]&&nums[mid]==nums[high]){
                 low++;
                 high--;
             }
-
+//if left half is sorted
             else if(nums[low]<=nums[mid]){
                     if(nums[low]<=target&&target<nums[mid]){
                         high=mid-1;
@@ -21,7 +21,7 @@ class Solution {
                         low=mid+1;
                     }
             }
-
+//if right half is sorted
             else{
                 if(nums[mid]<target&&target<=nums[high]){
                     low=mid+1;
